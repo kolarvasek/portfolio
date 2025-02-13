@@ -1,8 +1,7 @@
 import React from "react";
-import { color, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   FaGithub,
-  FaLinkedin,
   FaEnvelope,
   FaInstagram,
   FaPhone,
@@ -10,8 +9,11 @@ import {
   FaPhp,
   FaDatabase,
   FaHtml5,
+  FaCss3,
+  FaPython,
 } from "react-icons/fa";
 import { FaFlutter } from "react-icons/fa6";
+import { SiTailwindcss } from "react-icons/si";
 
 const App = () => {
   return (
@@ -28,25 +30,52 @@ const App = () => {
             <h1 className="text-4xl font-bold mb-2">Vasek Kolar</h1>
             <p className="text-lg">Software engineer</p>
             <div className="flex mt-4 space-x-4.5">
-              <motion.button whileHover={{ scale: 1.3 }}>
-                <a href="https://github.com/kolarvasek">
+              <motion.button
+                className="group relative flex items-center"
+                whileHover={{ scale: 1.4 }}
+              >
+                <a href="https://github.com/kolarvasek" target="blank">
                   <FaGithub size={24} />
                 </a>
+                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded px-2 py-1 whitespace-nowrap transition-opacity duration-300 pointer-events-none">
+                  GitHub
+                </span>
               </motion.button>
-              <motion.button whileHover={{ scale: 1.3 }}>
-                <a href="tel:773461557">
-                  <FaPhone size={24} />
-                </a>
-              </motion.button>
-              <motion.button whileHover={{ scale: 1.3 }}>
-                <a href="https://www.instagram.com/vasek._.kolar/">
+              <motion.button
+                className="group relative flex items-center"
+                whileHover={{ scale: 1.4 }}
+              >
+                <a
+                  href="https://www.instagram.com/vasek._.kolar/"
+                  target="blank"
+                >
                   <FaInstagram size={24} />
                 </a>
+                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded px-2 py-1 whitespace-nowrap transition-opacity duration-300 pointer-events-none">
+                  Instagram
+                </span>
               </motion.button>
-              <motion.button whileHover={{ scale: 1.3 }}>
+              <motion.button
+                className="group relative flex items-center"
+                whileHover={{ scale: 1.4 }}
+              >
                 <a href="mailto:vasek.kolar435@icloud.com">
                   <FaEnvelope size={24} />
                 </a>
+                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded px-2 py-1 whitespace-nowrap transition-opacity duration-300 pointer-events-none">
+                  Email
+                </span>
+              </motion.button>
+              <motion.button
+                className="group relative flex items-center"
+                whileHover={{ scale: 1.4 }}
+              >
+                <a href="tel:773461557">
+                  <FaPhone size={24} />
+                </a>
+                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded px-2 py-1 whitespace-nowrap transition-opacity duration-300 pointer-events-none">
+                  Phone
+                </span>
               </motion.button>
             </div>
           </motion.div>
@@ -71,16 +100,17 @@ const App = () => {
           </motion.div>
         </div>
       </div>
+      <h2 className="relative -top-30 flex justify-center items-center text-2xl font-bold">
+        Skills
+      </h2>
       {/* SKILLS */}
-      <div className="-translate-y-1 flex justify-center bg-gray-100 min-h-100">
-        <motion.div
-          className="md:w-4xl gap-10 bg-gray-100 grid grid-cols-5 grid-rows-2 items-center justify-center h-5"
-          initial={{ y: 100 }}
-          animate={{ y: 0 }}
-          transition={{ type: "spring", damping: 30 }}
-        >
+      <div className="-translate-y-9 flex flex-col items-center bg-gray-100 min-h-100">
+        <motion.div className="md:w-4xl gap-10 gap-y-20 bg-gray-100 grid grid-cols-4 grid-rows-2 items-center justify-center h-5">
           <motion.div
             className="bg-black p-3 rounded-xl flex items-center space-x-4 drop-shadow-2xl"
+            initial={{ y: 100 }}
+            animate={{ y: 0 }}
+            transition={{ type: "spring", damping: 30, delay: 0.2 }}
             whileHover={{
               scale: 1.1,
               backgroundColor: "#E0E0E0",
@@ -95,6 +125,9 @@ const App = () => {
           </motion.div>
           <motion.div
             className="bg-black p-3 rounded-xl flex items-center space-x-4 drop-shadow-2xl"
+            initial={{ y: 100 }}
+            animate={{ y: 0 }}
+            transition={{ type: "spring", damping: 30, delay: 0.5 }}
             whileHover={{
               scale: 1.1,
               backgroundColor: "#E0E0E0",
@@ -109,6 +142,9 @@ const App = () => {
           </motion.div>
           <motion.div
             className="bg-black p-3 rounded-xl flex items-center space-x-4 drop-shadow-2xl"
+            initial={{ y: 100 }}
+            animate={{ y: 0 }}
+            transition={{ type: "spring", damping: 30, delay: 0.8 }}
             whileHover={{
               scale: 1.1,
               backgroundColor: "#242424",
@@ -123,6 +159,9 @@ const App = () => {
           </motion.div>
           <motion.div
             className="bg-black p-3 rounded-xl flex items-center space-x-4 drop-shadow-2xl"
+            initial={{ y: 100 }}
+            animate={{ y: 0 }}
+            transition={{ type: "spring", damping: 30, delay: 1.1 }}
             whileHover={{
               scale: 1.1,
               backgroundColor: "#525252",
@@ -137,16 +176,71 @@ const App = () => {
           </motion.div>
           <motion.div
             className="bg-black p-3 rounded-xl flex items-center space-x-4 drop-shadow-2xl"
+            initial={{ y: 100 }}
+            animate={{ y: 0 }}
+            transition={{ type: "spring", damping: 30, delay: 0.2 }}
             whileHover={{
               scale: 1.1,
               backgroundColor: "#455269",
               transition: { ease: "easeInOut", duration: 0.4 },
             }}
           >
+            <SiTailwindcss size={30} className="flex-shrink-0" color="white" />
+            <div className="flex flex-col text-white">
+              <h4 className="font-bold">Tailwind</h4>
+              <p className="text-sm">Styling</p>
+            </div>
+          </motion.div>
+          {/* SKILLS SECOND */}
+          <motion.div
+            className="bg-black p-3 rounded-xl flex items-center space-x-4 drop-shadow-2xl"
+            initial={{ y: 100 }}
+            animate={{ y: 0 }}
+            transition={{ type: "spring", damping: 30, delay: 0.5 }}
+            whileHover={{
+              scale: 1.1,
+              backgroundColor: "#455269",
+              transition: { ease: "easeInOut", duration: 0.4 },
+            }}
+          >
+            <FaCss3 size={30} className="flex-shrink-0" color="white" />
+            <div className="flex flex-col text-white">
+              <h4 className="font-bold">Css</h4>
+              <p className="text-sm">Styling</p>
+            </div>
+          </motion.div>
+          <motion.div
+            className="bg-black p-3 rounded-xl flex items-center space-x-4 drop-shadow-2xl"
+            initial={{ y: 100 }}
+            animate={{ y: 0 }}
+            transition={{ type: "spring", damping: 30, delay: 0.8 }}
+            whileHover={{
+              scale: 1.1,
+              backgroundColor: "#455269",
+              transition: { ease: "easeInOut", duration: 0.7 },
+            }}
+          >
             <FaHtml5 size={30} className="flex-shrink-0" color="white" />
             <div className="flex flex-col text-white">
               <h4 className="font-bold">Html</h4>
               <p className="text-sm">Frontend</p>
+            </div>
+          </motion.div>
+          <motion.div
+            className="bg-black p-3 rounded-xl flex items-center space-x-4 drop-shadow-2xl"
+            initial={{ y: 100 }}
+            animate={{ y: 0 }}
+            transition={{ type: "spring", damping: 30, delay: 1.1 }}
+            whileHover={{
+              scale: 1.1,
+              backgroundColor: "#455269",
+              transition: { ease: "easeInOut", duration: 0.4 },
+            }}
+          >
+            <FaPython size={30} className="flex-shrink-0" color="white" />
+            <div className="flex flex-col text-white">
+              <h4 className="font-bold">Python</h4>
+              <p className="text-sm">Automation</p>
             </div>
           </motion.div>
         </motion.div>
