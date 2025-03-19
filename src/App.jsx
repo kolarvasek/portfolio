@@ -15,6 +15,8 @@ import {
   FaCss3,
   FaPython,
   FaLinkedin,
+  FaPhoneAlt,
+  FaEnvelopeOpen,
 } from "react-icons/fa";
 import { FaFlutter } from "react-icons/fa6";
 import { SiDailymotion, SiTailwindcss } from "react-icons/si";
@@ -453,6 +455,103 @@ const App = () => {
           </div>
         </motion.div>
       </motion.div>
+
+      {/* Contact Section */}
+      <motion.h2
+        className="relative flex justify-center items-center text-xl sm:text-2xl font-bold mb-8 mt-16"
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ type: "spring", damping: 30, delay: 0.2 }}
+      >
+        Kontaktuj mě
+      </motion.h2>
+
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 50, damping: 8 }}
+        className="w-full max-w-4xl mx-auto px-4 sm:px-6 mb-16"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-6">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg"
+            >
+              <div className="bg-gray-700 p-3 rounded-full">
+                <FaPhoneAlt className="text-white text-xl" />
+              </div>
+              <div>
+                <p className="text-white font-medium">Telefon</p>
+                <a href="tel:773461557" className="text-gray-300 hover:text-white">
+                  +420 773 461 557
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg"
+            >
+              <div className="bg-gray-700 p-3 rounded-full">
+                <FaEnvelopeOpen className="text-white text-xl" />
+              </div>
+              <div>
+                <p className="text-white font-medium">Email</p>
+                <a
+                  href="mailto:vasek.kolar435@icloud.com"
+                  className="text-gray-300 hover:text-white"
+                >
+                  vasek.kolar435@icloud.com
+                </a>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="space-y-6">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg"
+            >
+              <div className="bg-gray-700 p-3 rounded-full">
+                <FaLinkedin className="text-white text-xl" />
+              </div>
+              <div>
+                <p className="text-white font-medium">LinkedIn</p>
+                <a
+                  href="https://www.linkedin.com/in/václav-kolář-372319297/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white"
+                >
+                  Václav Kolář
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg"
+            >
+              <div className="bg-gray-700 p-3 rounded-full">
+                <FaInstagram className="text-white text-xl" />
+              </div>
+              <div>
+                <p className="text-white font-medium">Instagram</p>
+                <a
+                  href="https://www.instagram.com/vasek._.kolar/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white"
+                >
+                  @vasek._.kolar
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </motion.div>
+
       {/* Updated Modal */}
       <Modal
         open={openModal1}
@@ -644,6 +743,21 @@ const App = () => {
               transition={{ delay: 0.7 }}
             >
               <div className="flex gap-4">
+                <Button
+                  variant="outlined"
+                  disabled
+                  sx={{
+                    color: "rgba(255,255,255,0.5)",
+                    borderColor: "rgba(255,255,255,0.2)",
+                    cursor: "not-allowed",
+                    "&:hover": {
+                      borderColor: "rgba(255,255,255,0.2)",
+                      backgroundColor: "transparent",
+                    },
+                  }}
+                >
+                  Demo nedostupné
+                </Button>
                 <Button
                   variant="outlined"
                   component="a"
@@ -863,6 +977,23 @@ const App = () => {
                 <Button
                   variant="outlined"
                   component="a"
+                  href="https://instalater-git-main-kolarvaseks-projects.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    color: "white",
+                    borderColor: "white",
+                    "&:hover": {
+                      borderColor: "grey.500",
+                      backgroundColor: "rgba(255,255,255,0.1)",
+                    },
+                  }}
+                >
+                  Demo
+                </Button>
+                <Button
+                  variant="outlined"
+                  component="a"
                   href="https://github.com/kolarvasek/instalater"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -918,18 +1049,61 @@ const App = () => {
       </Modal>
 
       <motion.footer
-        className="bg-gray-800 text-white py-6 mt-16 px-4"
+        className="bg-gray-800 text-white py-8 px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
       >
-        <div className="text-center text-sm text-gray-400 max-w-6xl mx-auto">
-          <p>
+        <div className="max-w-6xl mx-auto flex flex-col items-center space-y-4">
+          <motion.div 
+            className="flex space-x-6"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <a 
+              href="https://github.com/kolarvasek" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-gray-400 transition-colors"
+            >
+              <FaGithub size={24} />
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/václav-kolář-372319297/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-gray-400 transition-colors"
+            >
+              <FaLinkedin size={24} />
+            </a>
+            <a 
+              href="https://www.instagram.com/vasek._.kolar/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-gray-400 transition-colors"
+            >
+              <FaInstagram size={24} />
+            </a>
+            <a 
+              href="mailto:vasek.kolar435@icloud.com" 
+              className="hover:text-gray-400 transition-colors"
+            >
+              <FaEnvelope size={24} />
+            </a>
+            <a 
+              href="tel:773461557" 
+              className="hover:text-gray-400 transition-colors"
+            >
+              <FaPhone size={24} />
+            </a>
+          </motion.div>
+          <p className="text-center text-sm text-gray-400">
             © {new Date().getFullYear()} Václav Kolář. Všechna práva vyhrazena.
           </p>
         </div>
       </motion.footer>
-      <Analytics/>
+      <Analytics />
     </div>
   );
 };
