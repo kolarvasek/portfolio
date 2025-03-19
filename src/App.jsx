@@ -101,6 +101,17 @@ const App = () => {
                   Phone
                 </span>
               </motion.button>
+              <motion.button
+                className="group relative flex items-center"
+                whileHover={{ scale: 1.4 }}
+              >
+                <a href="https://www.linkedin.com/in/vasek-kolar" target="blank">
+                  <FaLinkedin size={24} />
+                </a>
+                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded px-2 py-1 whitespace-nowrap transition-opacity duration-300 pointer-events-none">
+                  LinkedIn
+                </span>
+              </motion.button>
             </div>
           </motion.div>
           <motion.div
@@ -474,80 +485,75 @@ const App = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-6">
-            <motion.div
+            <motion.a
               whileHover={{ scale: 1.02 }}
-              className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg"
+              href="tel:773461557"
+              className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg cursor-pointer"
             >
               <div className="bg-gray-700 p-3 rounded-full">
                 <FaPhoneAlt className="text-white text-xl" />
               </div>
               <div>
                 <p className="text-white font-medium">Telefon</p>
-                <a href="tel:773461557" className="text-gray-300 hover:text-white">
+                <span className="text-gray-300 hover:text-white">
                   +420 773 461 557
-                </a>
+                </span>
               </div>
-            </motion.div>
+            </motion.a>
 
-            <motion.div
+            <motion.a
               whileHover={{ scale: 1.02 }}
-              className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg"
+              href="mailto:vasek.kolar435@icloud.com"
+              className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg cursor-pointer"
             >
               <div className="bg-gray-700 p-3 rounded-full">
                 <FaEnvelopeOpen className="text-white text-xl" />
               </div>
               <div>
                 <p className="text-white font-medium">Email</p>
-                <a
-                  href="mailto:vasek.kolar435@icloud.com"
-                  className="text-gray-300 hover:text-white"
-                >
+                <span className="text-gray-300 hover:text-white">
                   vasek.kolar435@icloud.com
-                </a>
+                </span>
               </div>
-            </motion.div>
+            </motion.a>
           </div>
 
           <div className="space-y-6">
-            <motion.div
+            <motion.a
               whileHover={{ scale: 1.02 }}
-              className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg"
+              href="https://www.linkedin.com/in/vasek-kolar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg cursor-pointer"
             >
               <div className="bg-gray-700 p-3 rounded-full">
                 <FaLinkedin className="text-white text-xl" />
               </div>
               <div>
                 <p className="text-white font-medium">LinkedIn</p>
-                <a
-                  href="https://www.linkedin.com/in/václav-kolář-372319297/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white"
-                >
+                <span className="text-gray-300 hover:text-white">
                   Václav Kolář
-                </a>
+                </span>
               </div>
-            </motion.div>
+            </motion.a>
 
-            <motion.div
+            <motion.a
               whileHover={{ scale: 1.02 }}
-              className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg"
+              href="https://www.instagram.com/vasek._.kolar/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg cursor-pointer"
             >
               <div className="bg-gray-700 p-3 rounded-full">
                 <FaInstagram className="text-white text-xl" />
               </div>
               <div>
                 <p className="text-white font-medium">Instagram</p>
-                <a
-                  href="https://www.instagram.com/vasek._.kolar/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white"
-                >
+                <span className="text-gray-300 hover:text-white">
                   @vasek._.kolar
-                </a>
+                </span>
               </div>
-            </motion.div>
+            </motion.a>
           </div>
         </div>
       </motion.div>
@@ -737,12 +743,12 @@ const App = () => {
             </motion.div>
 
             <motion.div
-              className="mt-8 flex justify-end items-center"
+              className="mt-8 flex justify-between items-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
             >
-              <div className="flex gap-4">
+              <div> {/* Left side */}
                 <Button
                   variant="outlined"
                   disabled
@@ -758,6 +764,8 @@ const App = () => {
                 >
                   Demo nedostupné
                 </Button>
+              </div>
+              <div className="flex gap-4"> {/* Right side */}
                 <Button
                   variant="outlined"
                   component="a"
@@ -968,12 +976,12 @@ const App = () => {
             </motion.div>
 
             <motion.div
-              className="mt-8 flex justify-end items-center"
+              className="mt-8 flex justify-between items-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
             >
-              <div className="flex gap-4">
+              <div> {/* Left side */}
                 <Button
                   variant="outlined"
                   component="a"
@@ -991,6 +999,8 @@ const App = () => {
                 >
                   Demo
                 </Button>
+              </div>
+              <div className="flex gap-4"> {/* Right side */}
                 <Button
                   variant="outlined"
                   component="a"
@@ -1055,44 +1065,44 @@ const App = () => {
         transition={{ delay: 0.2 }}
       >
         <div className="max-w-6xl mx-auto flex flex-col items-center space-y-4">
-          <motion.div 
+          <motion.div
             className="flex space-x-6"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <a 
-              href="https://github.com/kolarvasek" 
-              target="_blank" 
+            <a
+              href="https://github.com/kolarvasek"
+              target="_blank"
               rel="noopener noreferrer"
               className="hover:text-gray-400 transition-colors"
             >
               <FaGithub size={24} />
             </a>
-            <a 
-              href="https://www.linkedin.com/in/václav-kolář-372319297/" 
-              target="_blank" 
+            <a
+              href="www.linkedin.com/in/vasek-kolar"
+              target="_blank"
               rel="noopener noreferrer"
               className="hover:text-gray-400 transition-colors"
             >
               <FaLinkedin size={24} />
             </a>
-            <a 
-              href="https://www.instagram.com/vasek._.kolar/" 
-              target="_blank" 
+            <a
+              href="https://www.instagram.com/vasek._.kolar/"
+              target="_blank"
               rel="noopener noreferrer"
               className="hover:text-gray-400 transition-colors"
             >
               <FaInstagram size={24} />
             </a>
-            <a 
-              href="mailto:vasek.kolar435@icloud.com" 
+            <a
+              href="mailto:vasek.kolar435@icloud.com"
               className="hover:text-gray-400 transition-colors"
             >
               <FaEnvelope size={24} />
             </a>
-            <a 
-              href="tel:773461557" 
+            <a
+              href="tel:773461557"
               className="hover:text-gray-400 transition-colors"
             >
               <FaPhone size={24} />
