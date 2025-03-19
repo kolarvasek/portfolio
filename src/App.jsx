@@ -1,5 +1,4 @@
 import React from "react";
-import { SpeedInsights } from "@vercel/speed-insights/react";
 import { motion } from "framer-motion";
 import { Analytics } from "@vercel/analytics/react";
 import stravnicek from "./img/stravnicek.png";
@@ -931,7 +930,6 @@ const App = () => {
         </div>
       </motion.footer>
       <Analytics/>
-      <SpeedInsights/>
     </div>
   );
 };
