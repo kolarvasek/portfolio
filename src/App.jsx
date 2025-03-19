@@ -445,7 +445,7 @@ const App = () => {
                 transition={{ type: "spring", damping: 20, delay: 0.1 }}
                 className="text-gray-300 mb-4"
               >
-                Jednoduchá aplikace pro sledování a měrění stravy.
+                Úvodní stránka pro instalatérskou firmu.
               </motion.p>
               <motion.div
                 className="flex flex-wrap gap-2"
@@ -952,8 +952,7 @@ const App = () => {
                     sx={{ mb: 4 }}
                     className="text-gray-300"
                   >
-                    Webová aplikace pro instalatérskou firmu s možností správy
-                    objednávek, kalendářem a správou zákazníků.
+                    Webová aplikace pro instalatérskou firmu s základními informacemi a kontakty.
                   </Typography>
                 </motion.div>
 
@@ -966,10 +965,9 @@ const App = () => {
                     Funkce
                   </Typography>
                   <ul className="list-disc pl-4 text-gray-300 space-y-2">
-                    <li>Správa objednávek</li>
-                    <li>Kalendář zakázek</li>
-                    <li>Správa zákazníků</li>
-                    <li>Evidence materiálu</li>
+                    <li>Kontakty</li>
+                    <li>Služby</li>
+                    <li>Základní informace</li>
                   </ul>
                 </motion.div>
               </div>
