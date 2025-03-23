@@ -761,23 +761,6 @@ const App = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
             >
-              <div className="w-full sm:w-auto">
-                <Button
-                  variant="outlined"
-                  fullWidth={true}
-                  sx={{
-                    color: "white",
-                    borderColor: "white",
-                    mb: { xs: 2, sm: 0 },
-                    "&:hover": {
-                      borderColor: "grey.500",
-                      backgroundColor: "rgba(255,255,255,0.1)",
-                    },
-                  }}
-                >
-                  Demo
-                </Button>
-              </div>
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto">
                 <Button
                   variant="outlined"
