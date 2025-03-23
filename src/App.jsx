@@ -569,7 +569,7 @@ const App = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          margin: "16px",
+          p: { xs: 2, sm: 3 },
           "& .MuiBackdrop-root": {
             backdropFilter: "blur(2px)",
           },
@@ -585,7 +585,7 @@ const App = () => {
             stiffness: 200,
             duration: 0.3,
           }}
-          className="w-full max-w-[800px] mx-4"
+          className="w-full max-w-[95vw] md:max-w-[800px] mx-auto"
           onClick={handleCloseModal1}
         >
           <Box
@@ -597,8 +597,8 @@ const App = () => {
               position: "relative",
               outline: "none",
               boxShadow: "0 0 30px rgba(0,0,0,0.5)",
-              p: 4,
-              maxHeight: "90vh",
+              p: { xs: 2, sm: 3, md: 4 },
+              maxHeight: { xs: "95vh", sm: "90vh" },
               overflowY: "auto",
               "&::-webkit-scrollbar": {
                 width: "8px",
@@ -616,9 +616,16 @@ const App = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="mb-8"
+              className="mb-4 sm:mb-8"
             >
-              <Typography variant="h3" component="h2" gutterBottom>
+              <Typography 
+                variant="h3" 
+                component="h2" 
+                gutterBottom
+                sx={{
+                  fontSize: { xs: "1.75rem", sm: "2.5rem", md: "3rem" }
+                }}
+              >
                 Strávníček
               </Typography>
             </motion.div>
@@ -629,78 +636,69 @@ const App = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              <div>
+              <div className="space-y-4">
                 <motion.img
                   src={stravnicek}
                   alt="Project"
-                  className="w-full h-auto rounded-lg shadow-lg mb-4"
+                  className="w-full h-auto rounded-lg shadow-lg"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.4 }}
                 />
                 <motion.div
-                  className="flex flex-wrap gap-2 mt-4 justify-between items-center"
+                  className="flex flex-wrap gap-2"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
                 >
-                  {/* Tech stack */}
-                  <div className="flex flex-wrap gap-2">
-                    <motion.div
-                      className="flex items-center bg-gray-800 px-3 py-2 rounded-full"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                    >
-                      <FaReact size={20} className="mr-2" />
-                      <span>React</span>
-                    </motion.div>
-                    <motion.div
-                      className="flex items-center bg-gray-800 px-3 py-2 rounded-full"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                    >
-                      <FaPhp size={20} className="mr-2" />
-                      <span>PHP</span>
-                    </motion.div>
-                    <motion.div
-                      className="flex items-center bg-gray-800 px-3 py-2 rounded-full"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                    >
-                      <FaDatabase size={20} className="mr-2" />
-                      <span>MySQL</span>
-                    </motion.div>
-                    <motion.div
-                      className="flex items-center bg-gray-800 px-3 py-2 rounded-full"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                    >
-                      <SiTailwindcss size={20} className="mr-2" />
-                      <span>Tailwind</span>
-                    </motion.div>
-                  </div>
-
-                  {/* GitHub bttn*/}
                   <motion.div
+                    className="flex items-center bg-gray-800 px-3 py-2 rounded-full"
                     whileHover={{ scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  ></motion.div>
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 10,
+                    }}
+                  >
+                    <FaReact size={20} className="mr-2" />
+                    <span>React</span>
+                  </motion.div>
+                  <motion.div
+                    className="flex items-center bg-gray-800 px-3 py-2 rounded-full"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 10,
+                    }}
+                  >
+                    <FaPhp size={20} className="mr-2" />
+                    <span>PHP</span>
+                  </motion.div>
+                  <motion.div
+                    className="flex items-center bg-gray-800 px-3 py-2 rounded-full"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 10,
+                    }}
+                  >
+                    <FaDatabase size={20} className="mr-2" />
+                    <span>MySQL</span>
+                  </motion.div>
+                  <motion.div
+                    className="flex items-center bg-gray-800 px-3 py-2 rounded-full"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 10,
+                    }}
+                  >
+                    <SiTailwindcss size={20} className="mr-2" />
+                    <span>Tailwind</span>
+                  </motion.div>
                 </motion.div>
               </div>
 
@@ -710,12 +708,21 @@ const App = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 }}
                 >
-                  <Typography variant="h5" gutterBottom>
+                  <Typography 
+                    variant="h5" 
+                    gutterBottom
+                    sx={{
+                      fontSize: { xs: "1.25rem", sm: "1.5rem" }
+                    }}
+                  >
                     O Projektu
                   </Typography>
                   <Typography
                     variant="body1"
-                    sx={{ mb: 4 }}
+                    sx={{ 
+                      mb: 4,
+                      fontSize: { xs: "0.875rem", sm: "1rem" }
+                    }}
                     className="text-gray-300"
                   >
                     Webová aplikace pro sledování a měření stravy pomocí API,
@@ -729,7 +736,13 @@ const App = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6 }}
                 >
-                  <Typography variant="h5" gutterBottom>
+                  <Typography 
+                    variant="h5" 
+                    gutterBottom
+                    sx={{
+                      fontSize: { xs: "1.25rem", sm: "1.5rem" }
+                    }}
+                  >
                     Funkce
                   </Typography>
                   <ul className="list-disc pl-4 text-gray-300 space-y-2">
@@ -743,31 +756,32 @@ const App = () => {
             </motion.div>
 
             <motion.div
-              className="mt-8 flex justify-between items-center"
+              className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-between items-center gap-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
             >
-              <div> {/* Left side */}
+              <div className="w-full sm:w-auto">
                 <Button
                   variant="outlined"
-                  disabled
+                  fullWidth={true}
                   sx={{
-                    color: "rgba(255,255,255,0.5)",
-                    borderColor: "rgba(255,255,255,0.2)",
-                    cursor: "not-allowed",
+                    color: "white",
+                    borderColor: "white",
+                    mb: { xs: 2, sm: 0 },
                     "&:hover": {
-                      borderColor: "rgba(255,255,255,0.2)",
-                      backgroundColor: "transparent",
+                      borderColor: "grey.500",
+                      backgroundColor: "rgba(255,255,255,0.1)",
                     },
                   }}
                 >
-                  Demo nedostupné
+                  Demo
                 </Button>
               </div>
-              <div className="flex gap-4"> {/* Right side */}
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto">
                 <Button
                   variant="outlined"
+                  fullWidth={true}
                   component="a"
                   href="https://github.com/kolarvasek/stravnicek"
                   target="_blank"
@@ -785,6 +799,8 @@ const App = () => {
                   GitHub
                 </Button>
                 <Button
+                  variant="outlined"
+                  fullWidth={true}
                   onClick={handleCloseModal1}
                   sx={{
                     color: "white",
@@ -794,16 +810,14 @@ const App = () => {
                       backgroundColor: "rgba(255,255,255,0.1)",
                     },
                   }}
-                  variant="outlined"
                 >
                   Zavřít
                 </Button>
               </div>
             </motion.div>
 
-            {/* close bttn */}
             <motion.div
-              className="absolute top-4 right-4"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
@@ -834,7 +848,7 @@ const App = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          margin: "16px",
+          p: { xs: 2, sm: 3 },
           "& .MuiBackdrop-root": {
             backdropFilter: "blur(2px)",
           },
@@ -850,7 +864,7 @@ const App = () => {
             stiffness: 200,
             duration: 0.3,
           }}
-          className="w-full max-w-[800px] mx-4"
+          className="w-full max-w-[95vw] md:max-w-[800px] mx-auto"
           onClick={handleCloseModal2}
         >
           <Box
@@ -862,8 +876,8 @@ const App = () => {
               position: "relative",
               outline: "none",
               boxShadow: "0 0 30px rgba(0,0,0,0.5)",
-              p: 4,
-              maxHeight: "90vh",
+              p: { xs: 2, sm: 3, md: 4 },
+              maxHeight: { xs: "95vh", sm: "90vh" },
               overflowY: "auto",
               "&::-webkit-scrollbar": {
                 width: "8px",
@@ -881,9 +895,16 @@ const App = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="mb-8"
+              className="mb-4 sm:mb-8"
             >
-              <Typography variant="h3" component="h2" gutterBottom>
+              <Typography 
+                variant="h3" 
+                component="h2" 
+                gutterBottom
+                sx={{
+                  fontSize: { xs: "1.75rem", sm: "2.5rem", md: "3rem" }
+                }}
+              >
                 Instalatér
               </Typography>
             </motion.div>
@@ -894,47 +915,45 @@ const App = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              <div>
+              <div className="space-y-4">
                 <motion.img
                   src={instalater}
                   alt="Project"
-                  className="w-full h-auto rounded-lg shadow-lg mb-4"
+                  className="w-full h-auto rounded-lg shadow-lg"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.4 }}
                 />
                 <motion.div
-                  className="flex flex-wrap gap-2 mt-4 justify-between items-center"
+                  className="flex flex-wrap gap-2"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
                 >
-                  <div className="flex flex-wrap gap-2">
-                    <motion.div
-                      className="flex items-center bg-gray-800 px-3 py-2 rounded-full"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                    >
-                      <FaReact size={20} className="mr-2" />
-                      <span>React</span>
-                    </motion.div>
-                    <motion.div
-                      className="flex items-center bg-gray-800 px-3 py-2 rounded-full"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                    >
-                      <SiTailwindcss size={20} className="mr-2" />
-                      <span>Tailwind</span>
-                    </motion.div>
-                  </div>
+                  <motion.div
+                    className="flex items-center bg-gray-800 px-3 py-2 rounded-full"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 10,
+                    }}
+                  >
+                    <FaReact size={20} className="mr-2" />
+                    <span>React</span>
+                  </motion.div>
+                  <motion.div
+                    className="flex items-center bg-gray-800 px-3 py-2 rounded-full"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 10,
+                    }}
+                  >
+                    <SiTailwindcss size={20} className="mr-2" />
+                    <span>Tailwind</span>
+                  </motion.div>
                 </motion.div>
               </div>
 
@@ -944,12 +963,21 @@ const App = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 }}
                 >
-                  <Typography variant="h5" gutterBottom>
+                  <Typography 
+                    variant="h5" 
+                    gutterBottom
+                    sx={{
+                      fontSize: { xs: "1.25rem", sm: "1.5rem" }
+                    }}
+                  >
                     O Projektu
                   </Typography>
                   <Typography
                     variant="body1"
-                    sx={{ mb: 4 }}
+                    sx={{ 
+                      mb: 4,
+                      fontSize: { xs: "0.875rem", sm: "1rem" }
+                    }}
                     className="text-gray-300"
                   >
                     Webová aplikace pro instalatérskou firmu s základními informacemi a kontakty.
@@ -961,7 +989,13 @@ const App = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6 }}
                 >
-                  <Typography variant="h5" gutterBottom>
+                  <Typography 
+                    variant="h5" 
+                    gutterBottom
+                    sx={{
+                      fontSize: { xs: "1.25rem", sm: "1.5rem" }
+                    }}
+                  >
                     Funkce
                   </Typography>
                   <ul className="list-disc pl-4 text-gray-300 space-y-2">
@@ -974,21 +1008,19 @@ const App = () => {
             </motion.div>
 
             <motion.div
-              className="mt-8 flex justify-between items-center"
+              className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-between items-center gap-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
             >
-              <div> {/* Left side */}
+              <div className="w-full sm:w-auto">
                 <Button
                   variant="outlined"
-                  component="a"
-                  href="https://instalater-git-main-kolarvaseks-projects.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  fullWidth={true}
                   sx={{
                     color: "white",
                     borderColor: "white",
+                    mb: { xs: 2, sm: 0 },
                     "&:hover": {
                       borderColor: "grey.500",
                       backgroundColor: "rgba(255,255,255,0.1)",
@@ -998,9 +1030,10 @@ const App = () => {
                   Demo
                 </Button>
               </div>
-              <div className="flex gap-4"> {/* Right side */}
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto">
                 <Button
                   variant="outlined"
+                  fullWidth={true}
                   component="a"
                   href="https://github.com/kolarvasek/instalater"
                   target="_blank"
@@ -1018,6 +1051,8 @@ const App = () => {
                   GitHub
                 </Button>
                 <Button
+                  variant="outlined"
+                  fullWidth={true}
                   onClick={handleCloseModal2}
                   sx={{
                     color: "white",
@@ -1027,7 +1062,6 @@ const App = () => {
                       backgroundColor: "rgba(255,255,255,0.1)",
                     },
                   }}
-                  variant="outlined"
                 >
                   Zavřít
                 </Button>
@@ -1035,7 +1069,7 @@ const App = () => {
             </motion.div>
 
             <motion.div
-              className="absolute top-4 right-4"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
