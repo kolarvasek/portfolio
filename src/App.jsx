@@ -105,7 +105,10 @@ const App = () => {
                 className="group relative flex items-center"
                 whileHover={{ scale: 1.4 }}
               >
-                <a href="https://www.linkedin.com/in/vasek-kolar" target="blank">
+                <a
+                  href="https://www.linkedin.com/in/vasek-kolar"
+                  target="blank"
+                >
                   <FaLinkedin size={24} />
                 </a>
                 <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded px-2 py-1 whitespace-nowrap transition-opacity duration-300 pointer-events-none">
@@ -618,12 +621,12 @@ const App = () => {
               transition={{ delay: 0.2 }}
               className="mb-4 sm:mb-8"
             >
-              <Typography 
-                variant="h3" 
-                component="h2" 
+              <Typography
+                variant="h3"
+                component="h2"
                 gutterBottom
                 sx={{
-                  fontSize: { xs: "1.75rem", sm: "2.5rem", md: "3rem" }
+                  fontSize: { xs: "1.75rem", sm: "2.5rem", md: "3rem" },
                 }}
               >
                 Strávníček
@@ -708,20 +711,20 @@ const App = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 }}
                 >
-                  <Typography 
-                    variant="h5" 
+                  <Typography
+                    variant="h5"
                     gutterBottom
                     sx={{
-                      fontSize: { xs: "1.25rem", sm: "1.5rem" }
+                      fontSize: { xs: "1.25rem", sm: "1.5rem" },
                     }}
                   >
                     O Projektu
                   </Typography>
                   <Typography
                     variant="body1"
-                    sx={{ 
+                    sx={{
                       mb: 4,
-                      fontSize: { xs: "0.875rem", sm: "1rem" }
+                      fontSize: { xs: "0.875rem", sm: "1rem" },
                     }}
                     className="text-gray-300"
                   >
@@ -736,11 +739,11 @@ const App = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6 }}
                 >
-                  <Typography 
-                    variant="h5" 
+                  <Typography
+                    variant="h5"
                     gutterBottom
                     sx={{
-                      fontSize: { xs: "1.25rem", sm: "1.5rem" }
+                      fontSize: { xs: "1.25rem", sm: "1.5rem" },
                     }}
                   >
                     Funkce
@@ -754,14 +757,13 @@ const App = () => {
                 </motion.div>
               </div>
             </motion.div>
-
             <motion.div
               className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-between items-center gap-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
             >
-              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto sm:ml-auto">
                 <Button
                   variant="outlined"
                   fullWidth={true}
@@ -798,7 +800,6 @@ const App = () => {
                 </Button>
               </div>
             </motion.div>
-
             <motion.div
               className="absolute top-2 right-2 sm:top-4 sm:right-4"
               initial={{ opacity: 0 }}
@@ -880,12 +881,12 @@ const App = () => {
               transition={{ delay: 0.2 }}
               className="mb-4 sm:mb-8"
             >
-              <Typography 
-                variant="h3" 
-                component="h2" 
+              <Typography
+                variant="h3"
+                component="h2"
                 gutterBottom
                 sx={{
-                  fontSize: { xs: "1.75rem", sm: "2.5rem", md: "3rem" }
+                  fontSize: { xs: "1.75rem", sm: "2.5rem", md: "3rem" },
                 }}
               >
                 Instalatér
@@ -946,24 +947,25 @@ const App = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 }}
                 >
-                  <Typography 
-                    variant="h5" 
+                  <Typography
+                    variant="h5"
                     gutterBottom
                     sx={{
-                      fontSize: { xs: "1.25rem", sm: "1.5rem" }
+                      fontSize: { xs: "1.25rem", sm: "1.5rem" },
                     }}
                   >
                     O Projektu
                   </Typography>
                   <Typography
                     variant="body1"
-                    sx={{ 
+                    sx={{
                       mb: 4,
-                      fontSize: { xs: "0.875rem", sm: "1rem" }
+                      fontSize: { xs: "0.875rem", sm: "1rem" },
                     }}
                     className="text-gray-300"
                   >
-                    Webová aplikace pro instalatérskou firmu s základními informacemi a kontakty.
+                    Webová aplikace pro instalatérskou firmu s základními
+                    informacemi a kontakty.
                   </Typography>
                 </motion.div>
 
@@ -972,11 +974,11 @@ const App = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6 }}
                 >
-                  <Typography 
-                    variant="h5" 
+                  <Typography
+                    variant="h5"
                     gutterBottom
                     sx={{
-                      fontSize: { xs: "1.25rem", sm: "1.5rem" }
+                      fontSize: { xs: "1.25rem", sm: "1.5rem" },
                     }}
                   >
                     Funkce
