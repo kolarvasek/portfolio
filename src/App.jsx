@@ -12,6 +12,7 @@ import {
   SiInstagram,
 } from "react-icons/si";
 import { BiSolidEnvelope } from "react-icons/bi";
+import { Helmet } from "react-helmet";
 
 import stravnicek from "./img/stravnicek.png";
 import instalater from "./img/instalater.png";
@@ -43,14 +44,112 @@ export default function App() {
   }, []);
 
   return (
-    <div className="font-poppins text-slate-800 antialiased">
-      <Hero />
-      <Services />
-      <Projects openProj={openProj} setOpenProj={setOpenProj} />
-      <Contact />
-      <Footer />
-      <Analytics />
-    </div>
+    <>
+      {/* 3) SEO Metadata */}
+      <Helmet>
+        <title>Václav Kolář | Web & Mobile Developer</title>
+        <meta
+          name="description"
+          content="Portfolio of Václav Kolář – I build modern web & mobile solutions. Explore my projects, services, and get in touch to collaborate."
+        />
+        <meta property="og:title" content="Václav Kolář Portfolio" />
+        <meta
+          property="og:description"
+          content="Discover my work in web and mobile development. Let's create something amazing together!"
+        />
+        <meta
+          property="og:image"
+          content="https://yourdomain.com/social-share.png"
+        />
+        <meta property="og:url" content="https://yourdomain.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
+
+      <div className="font-poppins text-slate-800 antialiased">
+        <Hero />
+
+        <Services />
+        <Projects openProj={openProj} setOpenProj={setOpenProj} />
+
+        {/* 2) Enhance Contact clarity */}
+        <section
+          id="contact"
+          className="relative py-20 bg-white px-6 md:px-16 lg:px-32 text-center space-y-8"
+        >
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl font-semibold text-indigo-700"
+          >
+            Spojte se se mnou
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="max-w-xl mx-auto text-gray-700 leading-relaxed"
+          >
+            Jsem Václav Kolář, vývojář, který vytváří čisté a efektivní aplikace
+            přesně podle vašich potřeb. Spolupracuji s klienty transparentně a
+            dodávám řešení, která skutečně posouvají jejich byznys.{" "}
+          </motion.p>
+          
+          <div className="flex flex-col items-center space-y-4">
+          <motion.a
+              href="tel:+420773461557"
+              whileHover={{ scale: 1.05 }}>
+            <span className="text-indigo-600 font-medium text-xl underline">
+              vasek.kolar435@icloud.com
+            </span>
+            </motion.a>
+
+            <motion.a
+              href="tel:+420773461557"
+              whileHover={{ scale: 1.05 }}
+              className="text-indigo-600 font-medium underline text-xl"
+            >
+              +420 773 461 557
+            </motion.a>
+            <div className="flex space-x-6 mt-6">
+              <motion.a
+                href="https://github.com/kolarvasek"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub"
+                whileHover={{ scale: 1.1 }}
+                className="text-indigo-600"
+              >
+                <SiGithub size={28} />
+              </motion.a>
+              <motion.a
+                href="https://www.linkedin.com/in/vasek-kolar"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn"
+                whileHover={{ scale: 1.1 }}
+                className="text-indigo-600"
+              >
+                <SiLinkedin size={28} />
+              </motion.a>
+              <motion.a
+                href="https://www.instagram.com/vasek._.kolar"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Instagram"
+                whileHover={{ scale: 1.1 }}
+                className="text-indigo-600"
+              >
+                <SiInstagram size={28} />
+              </motion.a>
+            </div>
+          </div>
+        </section>
+
+        <Footer />
+        <Analytics />
+      </div>
+    </>
   );
 }
 
@@ -184,22 +283,22 @@ const Services = () => (
       ))}
     </div>
     <div className="flex justify-center mt-12">
-    <motion.a
-      href="#contact"
-      onClick={(e) => {
-        e.preventDefault()
-        document
-          .getElementById("contact")
-          .scrollIntoView({ behavior: "smooth" })
-      }}
-      whileHover={{ x: 6 }}
-      className="inline-flex items-center bg-blue-400 text-white px-6 py-3 rounded-full shadow-lg"
-    >
-      Spojte se se mnou
-      <ArrowRight size={20} weight="bold" className="ml-2" />
-    </motion.a>
-  </div>
-</section>
+      <motion.a
+        href="#contact"
+        onClick={(e) => {
+          e.preventDefault();
+          document
+            .getElementById("contact")
+            .scrollIntoView({ behavior: "smooth" });
+        }}
+        whileHover={{ x: 6 }}
+        className="inline-flex items-center bg-blue-400 text-white px-6 py-3 rounded-full shadow-lg"
+      >
+        Spojte se se mnou
+        <ArrowRight size={20} weight="bold" className="ml-2" />
+      </motion.a>
+    </div>
+  </section>
 );
 
 /* Projects Section */
