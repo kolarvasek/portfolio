@@ -240,7 +240,7 @@ const Projects = ({ openProj, setOpenProj }) => (
         </a>
       </motion.div>
     ) : (
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 mb-20">
         {projects.map((p) => (
           <motion.div
             key={p.id}
