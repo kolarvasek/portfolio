@@ -430,7 +430,7 @@ const Projects = ({ openProj, setOpenProj }) => (
                 rel="noopener noreferrer"
                 className="inline-flex items-center bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition"
               >
-                Zobrazit na GitHubu
+                Zobrazit stránku
                 <ArrowRight size={16} className="ml-2" />
               </a>
             </div>
