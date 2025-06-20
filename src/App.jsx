@@ -14,25 +14,16 @@ import {
 import { BiSolidEnvelope } from "react-icons/bi";
 import { Helmet } from "react-helmet";
 
-import stravnicek from "./img/stravnicek.png";
-import instalater from "./img/instalater.png";
+import barber from "./img/barber.png";
 
 const projects = [
   {
     id: 1,
-    title: "Strávníček",
-    img: stravnicek,
-    desc: "Jednoduchá aplikace pro sledování stravy.",
-    link: "https://github.com/kolarvasek/stravnicek",
-    tech: ["React", "PHP", "MySQL", "Tailwind"],
-  },
-  {
-    id: 2,
-    title: "Instalatér",
-    img: instalater,
-    desc: "Landing page pro instalatérskou firmu.",
-    link: "https://github.com/kolarvasek/instalater",
-    tech: ["React", "Tailwind"],
+    title: "Barbershop",
+    img: barber,
+    desc: "Stylová webová prezentace pro moderní barbershop. Rychlá, responzivní a s plynulou animací.",
+    link: "https://barbershop-website-orcin.vercel.app/",
+    tech: ["React", "Framer Motion", "Tailwind CSS"],
   },
 ];
 
