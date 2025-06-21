@@ -37,12 +37,12 @@ const projects = [
   },
   {
     id: 2,
-    title: "Rezervační systém pro holiče",
+    title: "Kompletní web pro barbershop",
     img: homepage,
-    desc: "Komplexní full-stack rezervační systém pro barbershop postavený na Next.js a Supabase. Umožňuje výběr holiče, služby, data a času s reálným blokováním dostupnosti a plynulým uživatelským zážitkem.",
+    desc: "Komplexní webová prezentace pro moderní barbershop zahrnující rezervační systém, nabídku služeb, prezentaci holičů a přehlednou administraci. Postaveno na Next.js a Supabase pro rychlý a plynulý uživatelský zážitek.",
     link: "https://barber-v2-bexqqthch-kolarvaseks-projects.vercel.app/",
     tech: ["Next.js", "React", "Supabase", "Framer Motion", "CSS"],
-    screenshots: [revize, cas, homepage, admin], // Multiple screenshots for slider
+    screenshots: [revize, cas, homepage, admin],
   },
 ];
 
