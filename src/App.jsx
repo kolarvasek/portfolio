@@ -7,7 +7,8 @@ import {
   Code, 
   Palette, 
   Phone, 
-  X
+  X,
+  Star
 } from "phosphor-react";
 import {
   SiGithub,
@@ -16,6 +17,7 @@ import {
 } from "react-icons/si";
 import { BiSolidEnvelope } from "react-icons/bi";
 import { Helmet } from "react-helmet";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 // Import project images
 import barber from "./img/barber.png";
@@ -24,6 +26,9 @@ import cas from "./img/cas.png";
 import homepage from "./img/homepage.png";
 import admin from "./img/admin.png";
 
+// Import BarberOffer component
+import BarberOffer from "./BarberOffer";
+
 // Project data with screenshots for image slider
 const projects = [
   {
@@ -31,7 +36,7 @@ const projects = [
     title: "Barbershop",
     img: barber,
     desc: "Stylová webová prezentace pro moderní barbershop. Rychlá, responzivní a s plynulou animací.",
-    link: "https://barbershop-website-orcin.vercel.app/",
+    link: "https://barber-v2-nine.vercel.app/",
     tech: ["React", "Framer Motion", "Tailwind CSS"],
     screenshots: [barber], // Fallback to single image
   },
@@ -85,6 +90,17 @@ const ImageSlider = ({ images, title }) => {
 };
 
 export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Portfolio />} />
+        <Route path="/barber-offer" element={<BarberOffer />} />
+      </Routes>
+    </Router>
+  );
+}
+
+function Portfolio() {
   const [openProj, setOpenProj] = useState(null);
 
   useEffect(() => {
@@ -379,6 +395,30 @@ const Services = () => {
             Spojte se se mnou
             <ArrowRight size={24} weight="bold" className="ml-2" />
           </motion.button>
+        </motion.div>
+
+        {/* Barber Offer CTA */}
+        <motion.div 
+          className="flex justify-center mt-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+        >
+          <motion.div
+            whileHover={{ scale: 1.05, x: 6 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link
+              to="/barber-offer"
+              onClick={() => window.scrollTo(0, 0)}
+              className="inline-flex items-center bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-4 rounded-full shadow-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300 focus:outline-none focus-visible:outline-none"
+            >
+              <Star size={24} weight="fill" className="mr-2" />
+              Speciální nabídka pro barbershopy
+              <ArrowRight size={24} weight="bold" className="ml-2" />
+            </Link>
+          </motion.div>
         </motion.div>
       </motion.div>
     </section>
