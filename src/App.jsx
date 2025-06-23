@@ -36,7 +36,7 @@ const projects = [
     title: "Barbershop",
     img: barber,
     desc: "Stylová webová prezentace pro moderní barbershop. Rychlá, responzivní a s plynulou animací.",
-    link: "https://barber-v2-nine.vercel.app/",
+    link: "https://barbershop-website-orcin.vercel.app/",
     tech: ["React", "Framer Motion", "Tailwind CSS"],
     screenshots: [barber], // Fallback to single image
   },
@@ -45,7 +45,7 @@ const projects = [
     title: "Kompletní web pro barbershop",
     img: homepage,
     desc: "Komplexní webová prezentace pro moderní barbershop zahrnující rezervační systém, nabídku služeb, prezentaci holičů a přehlednou administraci. Postaveno na Next.js a Supabase pro rychlý a plynulý uživatelský zážitek.",
-    link: "https://barber-v2-bexqqthch-kolarvaseks-projects.vercel.app/",
+    link: "https://barber-v2-nine.vercel.app/",
     tech: ["Next.js", "React", "Supabase", "Framer Motion", "CSS"],
     screenshots: [revize, cas, homepage, admin],
   },
